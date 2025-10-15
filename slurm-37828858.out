@@ -1,0 +1,56 @@
+WARNING: Kernel address maps (/proc/{kallsyms,modules}) are restricted,
+check /proc/sys/kernel/kptr_restrict and /proc/sys/kernel/perf_event_paranoid.
+
+Samples in kernel functions may not be resolved if a suitable vmlinux
+file is not found in the buildid cache or in the vmlinux path.
+
+Samples in kernel modules won't be resolved at all.
+
+If some relocation was applied (e.g. kexec) symbols may be misresolved
+even with a suitable vmlinux or kallsyms file.
+
+Couldn't record kernel reference relocation symbol
+Symbol resolution may be skewed if relocation was used (e.g. kexec).
+Check /proc/kallsyms permission or run as root.
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 5616 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 5305 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 5312 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 5323 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 5321 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 5319 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 5324 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 5317 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 5309 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 5307 milliseconds.
+[ perf record: Woken up 35 times to write data ]
+[ perf record: Captured and wrote 8.686 MB perf.data (1067 samples) ]
