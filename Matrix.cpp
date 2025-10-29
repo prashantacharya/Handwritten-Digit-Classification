@@ -1,4 +1,4 @@
-// Copyright (C) 2021 raodm@miamioh.edu
+// Copyright (C) 2025 acharyp@miamioh.edu
 
 #ifndef MATRIX_CPP
 #define MATRIX_CPP

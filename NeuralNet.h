@@ -6,7 +6,7 @@
  * is essentially based on the implementation from Michael Nielsen at
  * http://neuralnetworksanddeeplearning.com/
  *
- * Copyright (C) 2021 raodm@miamiOH.edu
+ * Copyright (C) 2025 acharyp@miamiOH.edu
  */
 
 #include <iostream>

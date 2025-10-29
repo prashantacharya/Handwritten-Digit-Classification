@@ -5,7 +5,7 @@
     declaration for a simple 2-D matrix class along with several
     convenience operators to streamline its use.
 
-    Copyright (C) 2015 raodm@miamiOH.edu
+    Copyright (C) 2025 acharyp@miamiOH.edu
 */
 
 #include <iostream>
