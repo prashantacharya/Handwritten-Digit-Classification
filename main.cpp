@@ -11,10 +11,14 @@
 #include <fstream>
 #include <vector>
 #include <random>
-#include <iomanip>
 #include <iostream>
 #include <chrono>
+#include <unordered_map>
+#include "Matrix.h"
 #include "NeuralNet.h"
+
+Matrix loadPGM(const std::string& path);
+Matrix getExpectedDigitOutput(const std::string& path);
 
 /**
  * Helper method to load a PGM data file into a 1-D matrix that can be
@@ -42,7 +46,7 @@ Matrix loadPGM(const std::string& path) {
     Matrix img(width * height, 1);
     for (int i = 0; (i < width * height); i++) {
         file >> value;
-        img[i][0] = value / maxVal;
+        img.data[i * 1] = value / maxVal;
     }
     return img;
 }
@@ -67,9 +71,80 @@ Matrix getExpectedDigitOutput(const std::string& path) {
     // Now create the expected matrix with the just the value
     // corresponding to the label set to 1.0
     Matrix expected(10, 1, 0.0);
-    expected[label][0] = 1.0;  // Just label should be 1.0
+    expected.data[label * 1] = 1.0;  // Just label should be 1.0
     return expected;
 }
+
+/**
+ * DataRepository: A caching layer that stores loaded images and labels
+ * to avoid redundant file I/O operations across multiple epochs.
+ */
+class DataRepository {
+public:
+    /**
+     * Fetches an image from the cache or loads it from disk if not cached.
+     * 
+     * \param[in] fullpath The full path to the PGM image file.
+     * 
+     * \return A const reference to the cached Matrix containing the image data.
+     */
+    static const Matrix& fetchImage(const std::string& fullpath) {
+        auto& store = getImageStore();
+        if (auto it = store.find(fullpath); it != store.end())
+            return it->second;
+
+        Matrix img = loadPGM(fullpath);
+        auto [pos, _] = store.emplace(fullpath, std::move(img));
+        return pos->second;
+    }
+
+    /**
+     * Fetches a label matrix from the cache or generates it if not cached.
+     * 
+     * \param[in] filename The image filename used to extract the expected digit label.
+     * 
+     * \return A const reference to the cached Matrix containing the label data.
+     */
+    static const Matrix& fetchLabel(const std::string& filename) {
+        auto& store = getLabelStore();
+        if (auto it = store.find(filename); it != store.end())
+            return it->second;
+
+        Matrix lbl = getExpectedDigitOutput(filename);
+        auto [pos, _] = store.emplace(filename, std::move(lbl));
+        return pos->second;
+    }
+
+    /**
+     * Clears all cached images and labels from memory.
+     * This can be used to free memory between experiments or test runs.
+     */
+    static void reset() {
+        getImageStore().clear();
+        getLabelStore().clear();
+    }
+
+private:
+    /**
+     * Returns a reference to the static image cache.
+     * 
+     * \return A reference to the unordered_map storing cached images.
+     */
+    static std::unordered_map<std::string, Matrix>& getImageStore() {
+        static std::unordered_map<std::string, Matrix> imageStore;
+        return imageStore;
+    }
+
+    /**
+     * Returns a reference to the static label cache.
+     * 
+     * \return A reference to the unordered_map storing cached labels.
+     */
+    static std::unordered_map<std::string, Matrix>& getLabelStore() {
+        static std::unordered_map<std::string, Matrix> labelStore;
+        return labelStore;
+    }
+};
 
 /**
  * Helper method to use the first \c count number of files to train a
@@ -88,13 +163,12 @@ Matrix getExpectedDigitOutput(const std::string& path) {
 void train(NeuralNet& net, const std::string& path,
            const std::vector<std::string>& fileNames,
            int count = 1e6) {
+    // Use DataRepository to cache images and labels across epochs
     for (const auto& imgName : fileNames) {
-        const Matrix img = loadPGM(path + "/" + imgName);
-        const Matrix exp = getExpectedDigitOutput(imgName);
+        const std::string fullPath = path + "/" + imgName;
+        const Matrix& img = DataRepository::fetchImage(fullPath);
+        const Matrix& exp = DataRepository::fetchLabel(imgName);
         net.learn(img, exp);
-        if (count-- <= 0) {
-            break;
-        }
     }
 }
 
@@ -170,10 +244,12 @@ void assess(NeuralNet& net, const std::string& path,
     }
     // Check how many of the images are correctly classified by the
     // given given neural network.
-    auto passCount = 0, totCount = 0;;
+
+    int passCount = 0, totCount = 0;
     for (std::string imgName; std::getline(fileList2, imgName); totCount++) {
-        const Matrix img = loadPGM(path + "/" + imgName);
-        const Matrix exp = getExpectedDigitOutput(imgName);
+        const std::string fullPath = path + "/" + imgName;
+        const Matrix& img = DataRepository::fetchImage(fullPath);
+        const Matrix& exp = DataRepository::fetchLabel(imgName);
         // Have our network classify the image.
         const Matrix res = net.classify(img);
         assert(res.width() == 1);
@@ -181,8 +257,9 @@ void assess(NeuralNet& net, const std::string& path,
         // Find the maximum index positions in exp results to see if
         // they are the same. If they are it is a good
         // result. Otherwise, it is an error.
-        const int expIdx = maxElemIndex(exp.transpose()[0]);
-        const int resIdx = maxElemIndex(res.transpose()[0]);
+        const int expIdx = maxElemIndex(exp.transpose().data);
+        const int resIdx = maxElemIndex(res.transpose().data);
+
         if (expIdx == resIdx) {
             passCount++;
         }

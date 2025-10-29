@@ -19,6 +19,7 @@ using Val = double;
 /** Short cut to a 2-d vector double values to streamline the code */
 using TwoDVec = std::vector<std::vector<Val>>;
 
+
 /** A matrix class to perform basic matrix operations.
 
     The class essentially encapsulates a 2-d matrix of double values
@@ -34,7 +35,7 @@ using TwoDVec = std::vector<std::vector<Val>>;
     
     </ul>
 */
-class Matrix : public TwoDVec {
+class Matrix {
     /** Stream insertion operator to ease printing matrices
      *
      * This method prints the dimension of the matrix and then prints
@@ -70,6 +71,10 @@ class Matrix : public TwoDVec {
     friend std::istream& operator>>(std::istream& is, Matrix& matrix);
 
 public:
+    std::vector<Val> data;
+    size_t rows;
+    size_t cols;
+
     /**
      * Constructor to create and initialize a matrix.
      *
@@ -89,14 +94,14 @@ public:
      *
      * \return Returns the height or number of rows in this matrix.
      */
-    int height() const { return size(); }
+    int height() const { return rows; }
 
     /**
      * Returns the width or number of columns in this matrix.
      *
      * \return Returns the width or number of columns in this matrix.
      */
-    int width() const { return (height() > 0) ? front().size() : 0; }
+    int width() const { return (height() > 0) ? cols : 0; }
     
     /**
      * Creates a new matrix in which each value is obtained by
@@ -108,16 +113,16 @@ public:
     template<typename UnaryOp>
     Matrix apply(const UnaryOp& operation) const {
         // If the matrix is empty, then we have nothing to do.
-        if (empty()) {
+        if (rows == 0 || cols == 0) {
             return *this;  // return copy of empty matrix.
         }
         // Now apply the specified operation to each element and store it
         // in the new matrix
         Matrix result = *this;  // Initialize to current values.
         // Apply unary operation to each element in the result
-        for (auto& row : result) {
-            for (auto& val : row) {
-                val = operation(val);
+        for (size_t row = 0; row < rows; row++) {
+            for (size_t col = 0; col < cols; col++) {
+                result.data[row * cols + col] = operation(result.data[row * cols + col]);
             }
         }
         // The resulting matrix after applying specified operations.
@@ -139,24 +144,24 @@ public:
     template<typename BinaryOp>
     Matrix apply(const Matrix& other, const BinaryOp& operation) const {
         // Check to ensure the number of rows are the same.
-        assert(size() == other.size());
+        assert(rows == other.rows);
         // If the matrix is empty, then we have nothing to do.
-        if (empty()) {
+        if (rows == 0 || cols == 0) {
             return *this;  // return copy of empty matrix.
         }
         // Ensure the number of columns match.
-        assert(front().size() == other.front().size());
+        assert(cols == other.cols);
         // Now apply the specified operation to each element and store it
         // in the new matrix
         Matrix result = *this;  // Initialize to current values.
         // Here we use index so that we can access the corresponding
         // element in the other matrix as well.
-        for (size_t row = 0; (row < size()); ++row) {
-            for (size_t col = 0; (col < (*this)[row].size()); ++col) {
+        for (size_t row = 0; (row < rows); ++row) {
+            for (size_t col = 0; (col < cols); ++col) {
                 // Recollect result is initialized to values of this
                 // matrix. So we use result to reduce the number of
                 // different values accessed.
-                result[row][col] = operation(result[row][col], other[row][col]);
+                result.data[row * cols + col] = operation(result.data[row * cols + col], other.data[row * cols + col]);
             }
         }
         // The resulting matrix after applying specified operations.

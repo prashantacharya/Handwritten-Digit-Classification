@@ -1,0 +1,6 @@
+1. Adding additional flags during compilation improved the performance by 2 seconds, (24 seconds now instead of 26)
+g++ -g -Wall -std=c++17 -O3 -march=native -ftree-vectorize -flto Matrix.cpp NeuralNet.cpp main.cpp -o homework5
+
+2. The NeuralNet::learn method is being executed 8.32 times so if I improve it, the performance will be significantly better.
+
+3. I thought that reading the image all at once would make the performance better. This would use more memory.

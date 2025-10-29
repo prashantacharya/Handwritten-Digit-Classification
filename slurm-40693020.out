@@ -1,0 +1,315 @@
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 2949 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 944 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 931 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 944 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 945 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 930 milliseconds.
+	Command being timed: "./homework5 /tmp/slurmtmp.40693020/data"
+	User time (seconds): 10.88
+	System time (seconds): 0.45
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 103572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 166720
+	Voluntary context switches: 57
+	Involuntary context switches: 49
+	Swaps: 0
+	File system inputs: 512
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 2918 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 947 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 931 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 947 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 948 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 932 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 932 milliseconds.
+	Command being timed: "./homework5 /tmp/slurmtmp.40693020/data"
+	User time (seconds): 10.89
+	System time (seconds): 0.43
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 103572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 166722
+	Voluntary context switches: 50
+	Involuntary context switches: 52
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 2932 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 948 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 932 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 946 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 946 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 930 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 932 milliseconds.
+	Command being timed: "./homework5 /tmp/slurmtmp.40693020/data"
+	User time (seconds): 10.89
+	System time (seconds): 0.44
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 103572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 166722
+	Voluntary context switches: 50
+	Involuntary context switches: 62
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 2930 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 947 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 934 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 946 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 946 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 932 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 931 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 931 milliseconds.
+	Command being timed: "./homework5 /tmp/slurmtmp.40693020/data"
+	User time (seconds): 10.89
+	System time (seconds): 0.44
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 103572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 166722
+	Voluntary context switches: 50
+	Involuntary context switches: 48
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-- Epoch #0 --
+Training with 5000 images...
+Correct classification: 1090 [0.109% ]
+Elapsed time = 2939 milliseconds.
+-- Epoch #1 --
+Training with 5000 images...
+Correct classification: 2043 [0.2043% ]
+Elapsed time = 948 milliseconds.
+-- Epoch #2 --
+Training with 5000 images...
+Correct classification: 2947 [0.2947% ]
+Elapsed time = 932 milliseconds.
+-- Epoch #3 --
+Training with 5000 images...
+Correct classification: 3108 [0.3108% ]
+Elapsed time = 947 milliseconds.
+-- Epoch #4 --
+Training with 5000 images...
+Correct classification: 3164 [0.3164% ]
+Elapsed time = 947 milliseconds.
+-- Epoch #5 --
+Training with 5000 images...
+Correct classification: 3195 [0.3195% ]
+Elapsed time = 932 milliseconds.
+-- Epoch #6 --
+Training with 5000 images...
+Correct classification: 3217 [0.3217% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #7 --
+Training with 5000 images...
+Correct classification: 3230 [0.323% ]
+Elapsed time = 931 milliseconds.
+-- Epoch #8 --
+Training with 5000 images...
+Correct classification: 3236 [0.3236% ]
+Elapsed time = 933 milliseconds.
+-- Epoch #9 --
+Training with 5000 images...
+Correct classification: 3248 [0.3248% ]
+Elapsed time = 933 milliseconds.
+	Command being timed: "./homework5 /tmp/slurmtmp.40693020/data"
+	User time (seconds): 10.92
+	System time (seconds): 0.42
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 103572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 166720
+	Voluntary context switches: 51
+	Involuntary context switches: 49
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -11,7 +11,12 @@
 #SBATCH --tasks-per-node=1
 
 # You may uncomment the following line to compile the program
-g++ -g -Wall -std=c++17 -O3 -funroll-loops -march=native Matrix.cpp NeuralNet.cpp main.cpp -o homework5
+# g++ -g -Wall -std=c++17 -O3 Matrix.cpp NeuralNet.cpp main.cpp -o homework5
+
+# g++ -g -Wall -std=c++17 -O3 -march=native -ftree-vectorize Matrix.cpp NeuralNet.cpp main.cpp -o homework5
+
+g++ -g -Wall -std=c++17 -O3 -march=native -ftree-vectorize -flto Matrix.cpp NeuralNet.cpp main.cpp -o homework5
+
 
 # Setup the mnist image files for testing and training on local
 # temporary storage to reduce I/O times.  If it is not on local
@@ -19,14 +24,14 @@ g++ -g -Wall -std=c++17 -O3 -funroll-loops -march=native Matrix.cpp NeuralNet.cp
 unzip -q /fs/ess/PMIU0184/cse443/data/mnist_images.zip -d "${TMPDIR}"
 
 # Uncomment the following for profiling 
-perf record -F 20 --call-graph dwarf ./homework5 "${TMPDIR}/data"
+# perf record -F 20 --call-graph dwarf ./homework5 "${TMPDIR}/data"
 
 # Comment out the time lines when profiling.
 # Run the program 5 times to get measure consistent timings
-# /usr/bin/time -v ./homework5 "${TMPDIR}/data"
-# /usr/bin/time -v ./homework5 "${TMPDIR}/data"
-# /usr/bin/time -v ./homework5 "${TMPDIR}/data"
-# /usr/bin/time -v ./homework5 "${TMPDIR}/data"
-# /usr/bin/time -v ./homework5 "${TMPDIR}/data"
+/usr/bin/time -v ./homework5 "${TMPDIR}/data"
+/usr/bin/time -v ./homework5 "${TMPDIR}/data"
+/usr/bin/time -v ./homework5 "${TMPDIR}/data"
+/usr/bin/time -v ./homework5 "${TMPDIR}/data"
+/usr/bin/time -v ./homework5 "${TMPDIR}/data"
 
 #end of script
