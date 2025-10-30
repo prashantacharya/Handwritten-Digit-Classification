@@ -122,7 +122,8 @@ public:
         // Apply unary operation to each element in the result
         for (size_t row = 0; row < rows; row++) {
             for (size_t col = 0; col < cols; col++) {
-                result.data[row * cols + col] = operation(result.data[row * cols + col]);
+                result.data[row * cols + col] = operation(
+                    result.data[row * cols + col]);
             }
         }
         // The resulting matrix after applying specified operations.
@@ -161,7 +162,9 @@ public:
                 // Recollect result is initialized to values of this
                 // matrix. So we use result to reduce the number of
                 // different values accessed.
-                result.data[row * cols + col] = operation(result.data[row * cols + col], other.data[row * cols + col]);
+                result.data[row * cols + col] = operation(
+                    result.data[row * cols + col], 
+                    other.data[row * cols + col]);
             }
         }
         // The resulting matrix after applying specified operations.
